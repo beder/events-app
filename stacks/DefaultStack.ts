@@ -1,4 +1,4 @@
-import { Api, Bucket, RDS, Script, StackContext } from "sst/constructs";
+import { Api, Bucket, NextjsSite, RDS, Script, StackContext } from "sst/constructs";
 
 export function DefaultStack({ stack }: StackContext) {
   const bucket = new Bucket(stack, "Bucket");
@@ -65,7 +65,15 @@ export function DefaultStack({ stack }: StackContext) {
     },
   });
 
+  const frontend = new NextjsSite(stack, "Site", {
+    path: "packages/frontend",
+    environment: {
+      NEXT_PUBLIC_API_URL: api.url,
+    },
+  });
+
   stack.addOutputs({
     ApiEndpoint: api.url,
+    SiteUrl: frontend.url,
   });
 }
