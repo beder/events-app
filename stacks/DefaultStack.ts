@@ -68,6 +68,7 @@ export function DefaultStack({ stack }: StackContext) {
   const frontend = new NextjsSite(stack, "Site", {
     path: "packages/frontend",
     environment: {
+      IMAGES_BASE_URL: `https://${bucket.cdk.bucket.bucketRegionalDomainName}`,
       NEXT_PUBLIC_API_URL: api.url,
     },
   });
