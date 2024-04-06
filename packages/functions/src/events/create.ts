@@ -2,12 +2,12 @@ import { ApiHandler } from "sst/node/api";
 import {
   createEvent,
   insertEventSchema,
-} from "@events-app-backend/core/src/createEvent";
+} from "@events-app/core/src/createEvent";
 import {
   useUser,
   withUserStoredInContext,
-} from "@events-app-backend/core/src/middleware";
-import { json } from "@events-app-backend/core/src/utils/json";
+} from "@events-app/core/src/middleware";
+import { json } from "@events-app/core/src/utils/json";
 import middy from "@middy/core";
 
 export const handler = middy()

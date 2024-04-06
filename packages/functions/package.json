@@ -1,5 +1,5 @@
 {
-  "name": "@events-app-backend/functions",
+  "name": "@events-app/functions",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

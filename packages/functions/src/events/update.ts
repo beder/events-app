@@ -2,13 +2,13 @@ import { ApiHandler } from "sst/node/api";
 import {
   updateEvent,
   updateEventSchema,
-} from "@events-app-backend/core/src/updateEvent";
+} from "@events-app/core/src/updateEvent";
 import middy from "@middy/core";
 import {
   withOwnershipCheck,
   withUserStoredInContext,
-} from "@events-app-backend/core/src/middleware";
-import { json } from "@events-app-backend/core/src/utils/json";
+} from "@events-app/core/src/middleware";
+import { json } from "@events-app/core/src/utils/json";
 
 export const handler = middy()
   .use([withUserStoredInContext(), withOwnershipCheck()])

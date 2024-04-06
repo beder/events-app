@@ -4,7 +4,7 @@ import { DefaultStack } from "./stacks/DefaultStack";
 export default {
   config(_input) {
     return {
-      name: "events-app-backend",
+      name: "events-app",
       region: "us-east-1",
     };
   },

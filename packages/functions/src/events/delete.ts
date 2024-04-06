@@ -1,11 +1,11 @@
 import { ApiHandler } from "sst/node/api";
-import { deleteEvent } from "@events-app-backend/core/src/deleteEvent";
-import { json } from "@events-app-backend/core/src/utils/json";
+import { deleteEvent } from "@events-app/core/src/deleteEvent";
+import { json } from "@events-app/core/src/utils/json";
 import middy from "@middy/core";
 import {
   withOwnershipCheck,
   withUserStoredInContext,
-} from "@events-app-backend/core/src/middleware";
+} from "@events-app/core/src/middleware";
 
 export const handler = middy()
   .use([withUserStoredInContext(), withOwnershipCheck()])

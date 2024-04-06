@@ -1,5 +1,5 @@
 {
-  "name": "@events-app-backend/core",
+  "name": "@events-app/core",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
