@@ -6,7 +6,7 @@ It comprises a Next.js frontend and an AWS Lambda RESTful API backend, leveragin
 
 ## Setting up SST prerequisites
 
-Ensure you have at least [Node.js 18](https://nodejs.org/) and[ npm 7](https://www.npmjs.com/)installed. Additionally, you must have an AWS account and locally configured [AWS credentials](https://docs.sst.dev/advanced/iam-credentials#loading-from-a-file).
+Ensure you have at least [Node.js 18](https://nodejs.org/) and[ npm 7](https://www.npmjs.com/) installed. Additionally, you must have an AWS account and locally configured [AWS credentials](https://docs.sst.dev/advanced/iam-credentials#loading-from-a-file).
 
 ## Setting up Clerk
 
