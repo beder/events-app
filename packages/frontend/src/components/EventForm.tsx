@@ -28,6 +28,7 @@ export function EventForm({ event }: { event?: Event }) {
     defaultValues: {
       ...event,
       date: event?.date?.split('T')[0],
+      location: event?.location ?? locations[0].id,
     },
   })
 
