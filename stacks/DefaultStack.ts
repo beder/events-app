@@ -31,10 +31,10 @@ export function DefaultStack({ stack }: StackContext) {
         type: "jwt",
         identitySource: ["$request.header.authorization"],
         jwt: {
-          audience: ["test"],
+          audience: ["evenia.com"],
           issuer:
             process.env.JWT_AUTHORIZER_ISSUER ??
-            "https://example.clerk.accounts.dev",
+            "https://set-me-in-stacks-default-stack.clerk.accounts.dev",
         },
       },
     },
