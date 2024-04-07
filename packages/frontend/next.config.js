@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: new URL(process.env.IMAGES_BASE_URL).protocol.replace(':', ''),
-        hostname: new URL(process.env.IMAGES_BASE_URL).hostname,
+        protocol: 'https',
+        hostname: '**.amazonaws.com',
         port: '',
         pathname: '**',
       },
