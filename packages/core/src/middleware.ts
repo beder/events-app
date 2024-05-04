@@ -1,7 +1,7 @@
 import middy from "@middy/core";
 import { AsyncLocalStorage } from "async_hooks";
 import { APIGatewayProxyEventV2WithJWTAuthorizer } from "aws-lambda";
-import { getEvent } from "./getEvent";
+import { getEvent } from "./get-event";
 import { forbidden } from "./utils/forbidden";
 
 const userStorage = new AsyncLocalStorage();
