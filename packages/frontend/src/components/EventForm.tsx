@@ -10,6 +10,7 @@ import { useUpdateEvent } from '@/services/updateEvent'
 import { useRouter } from 'next/navigation'
 import { FileField } from './FileField'
 import { useUploadImage } from '@/services/uploadImage'
+import { useState } from 'react'
 
 const locations = [
   { id: 'paris', name: 'Paris' },
@@ -23,6 +24,7 @@ const locations = [
 
 export function EventForm({ event }: { event?: Event }) {
   const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false)
 
   const formMethods = useForm<CreateEventPayload | UpdateEventPayload>({
     defaultValues: {
@@ -39,20 +41,25 @@ export function EventForm({ event }: { event?: Event }) {
   const uploadImage = useUploadImage()
 
   const onSubmit = async (data: CreateEventPayload | UpdateEventPayload) => {
-    const image = data?.image?.[0]
+    try {
+      setIsLoading(true)
+      const image = data?.image?.[0]
 
-    if (image instanceof File) {
-      const url = await uploadImage(image)
+      if (image instanceof File) {
+        const url = await uploadImage(image)
 
-      data.imageUrl = url
-    }
+        data.imageUrl = url
+      }
 
-    const result = event?.id
-      ? await updateEvent(event.id, data as UpdateEventPayload)
-      : await createEvent(data)
+      const result = event?.id
+        ? await updateEvent(event.id, data as UpdateEventPayload)
+        : await createEvent(data)
 
-    if (result?.id) {
-      router.push(`/events/${result.id}`)
+      if (result?.id) {
+        router.push(`/events/${result.id}`)
+      }
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -107,8 +114,13 @@ export function EventForm({ event }: { event?: Event }) {
                 </div>
               </div>
               <div className="flex max-w-none items-center px-6 lg:col-span-full">
-                <Button color="indigo" type="submit" className="w-full">
-                  Save
+                <Button
+                  color="indigo"
+                  type="submit"
+                  className="w-full"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Saving...' : 'Save'}
                 </Button>
               </div>
             </div>
