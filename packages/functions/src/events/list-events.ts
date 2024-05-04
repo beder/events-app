@@ -1,5 +1,5 @@
 import { json } from "@events-app/core/src/utils/json";
-import { listEvents } from "@events-app/core/src/listEvents";
+import { listEvents } from "@events-app/core/src/list-events";
 import { ApiHandler } from "sst/node/api";
 
 export const handler = ApiHandler(async (apiEvent) => {

@@ -2,7 +2,7 @@ import { ApiHandler } from "sst/node/api";
 import {
   createEvent,
   insertEventSchema,
-} from "@events-app/core/src/createEvent";
+} from "@events-app/core/src/create-event";
 import {
   useUser,
   withUserStoredInContext,

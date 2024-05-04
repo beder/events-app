@@ -44,23 +44,23 @@ export function DefaultStack({ stack }: StackContext) {
       },
     },
     routes: {
-      "GET /events": "packages/functions/src/events/list.handler",
-      "GET /events/{id}": "packages/functions/src/events/get.handler",
+      "GET /events": "packages/functions/src/events/list-events.handler",
+      "GET /events/{id}": "packages/functions/src/events/get-event.handler",
       "PUT /events/{id}": {
         authorizer: "JwtAuthorizer",
-        function: "packages/functions/src/events/update.handler",
+        function: "packages/functions/src/events/update-event.handler",
       },
       "POST /events": {
         authorizer: "JwtAuthorizer",
-        function: "packages/functions/src/events/create.handler",
+        function: "packages/functions/src/events/create-event.handler",
       },
       "DELETE /events/{id}": {
         authorizer: "JwtAuthorizer",
-        function: "packages/functions/src/events/delete.handler",
+        function: "packages/functions/src/events/delete-event.handler",
       },
       "POST /presigned-urls": {
         authorizer: "JwtAuthorizer",
-        function: "packages/functions/src/presigned-urls/create.handler",
+        function: "packages/functions/src/presigned-urls/create-presigned-url.handler",
       },
     },
   });

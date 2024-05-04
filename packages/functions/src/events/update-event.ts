@@ -2,7 +2,7 @@ import { ApiHandler } from "sst/node/api";
 import {
   updateEvent,
   updateEventSchema,
-} from "@events-app/core/src/updateEvent";
+} from "@events-app/core/src/update-event";
 import middy from "@middy/core";
 import {
   withOwnershipCheck,
